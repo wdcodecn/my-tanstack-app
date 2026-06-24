@@ -1,4 +1,3 @@
-FROM node:22-alpine
-WORKDIR /app
-RUN echo "console.log('hello from tanstack'); require('http').createServer((req,res) => res.end('Hello Gold Label')).listen(3000)" > server.js
-CMD ["node", "server.js"]
+FROM alpine:3.19
+RUN apk add --no-cache nodejs && echo 'require("http").createServer((q,r) => r.end("ok")).listen(3000)' > /s.js
+CMD ["node", "/s.js"]
