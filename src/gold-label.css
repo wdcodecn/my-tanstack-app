@@ -1,0 +1,765 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+/* ============================================================
+   GOLD LABEL — Premium Crypto Wallet Dashboard Design System
+   Two themes: "Gold Label Ivory" (light) & "Obsidian Gold Label" (dark)
+   ============================================================ */
+
+.gl-scope {
+	/* Light theme — Gold Label Ivory (default) */
+	--gl-surface: #f9f9f9;
+	--gl-surface-dim: #dadada;
+	--gl-surface-bright: #f9f9f9;
+	--gl-surface-container-lowest: #ffffff;
+	--gl-surface-container-low: #f3f3f3;
+	--gl-surface-container: #eeeeee;
+	--gl-surface-container-high: #e8e8e8;
+	--gl-surface-container-highest: #e2e2e2;
+	--gl-on-surface: #1b1b1b;
+	--gl-on-surface-variant: #4d4635;
+	--gl-inverse-surface: #303030;
+	--gl-inverse-on-surface: #f1f1f1;
+	--gl-outline: #7f7663;
+	--gl-outline-variant: #d0c5af;
+	--gl-surface-tint: #735c00;
+	--gl-primary: #735c00;
+	--gl-on-primary: #ffffff;
+	--gl-primary-container: #d4af37;
+	--gl-on-primary-container: #554300;
+	--gl-inverse-primary: #e9c349;
+	--gl-secondary: #5f5e5e;
+	--gl-on-secondary: #ffffff;
+	--gl-secondary-container: #e2dfde;
+	--gl-on-secondary-container: #636262;
+	--gl-tertiary: #505f76;
+	--gl-on-tertiary: #ffffff;
+	--gl-tertiary-container: #a4b4cd;
+	--gl-on-tertiary-container: #36465b;
+	--gl-error: #ba1a1a;
+	--gl-on-error: #ffffff;
+	--gl-error-container: #ffdad6;
+	--gl-on-error-container: #93000a;
+	--gl-primary-fixed: #ffe088;
+	--gl-primary-fixed-dim: #e9c349;
+	--gl-on-primary-fixed: #241a00;
+	--gl-on-primary-fixed-variant: #574500;
+	--gl-secondary-fixed: #e5e2e1;
+	--gl-secondary-fixed-dim: #c8c6c5;
+	--gl-on-secondary-fixed: #1c1b1b;
+	--gl-on-secondary-fixed-variant: #474746;
+	--gl-tertiary-fixed: #d3e4fe;
+	--gl-tertiary-fixed-dim: #b7c8e1;
+	--gl-on-tertiary-fixed: #0b1c30;
+	--gl-on-tertiary-fixed-variant: #38485d;
+	--gl-background: #f9f9f9;
+	--gl-on-background: #1b1b1b;
+	--gl-surface-variant: #e2e2e2;
+
+	/* Network brand colors (global tokens) */
+	--gl-network-xlayer: #000000;
+	--gl-network-bitcoin: #f7931a;
+	--gl-network-ethereum: #627eea;
+	--gl-network-solana: #14f195;
+	--gl-network-solana-secondary: #9945ff;
+	--gl-network-tron: #ff060a;
+
+	/* Semantic sentiment */
+	--gl-success: #16a34a;
+	--gl-success-soft: rgba(22, 163, 74, 0.12);
+	--gl-danger: #dc2626;
+	--gl-danger-soft: rgba(220, 38, 38, 0.12);
+
+	/* Micro-border / depth tokens */
+	--gl-hairline: rgba(0, 0, 0, 0.06);
+	--gl-hairline-strong: rgba(0, 0, 0, 0.1);
+	--gl-inset-glint: rgba(255, 255, 255, 0.65);
+	--gl-ambient-shadow:
+		0 18px 40px -12px rgba(20, 20, 20, 0.18),
+		0 6px 14px -8px rgba(20, 20, 20, 0.1);
+	--gl-soft-shadow: 0 6px 20px -8px rgba(20, 20, 20, 0.12);
+	--gl-gold-glow: 0 0 12px rgba(212, 175, 55, 0.45);
+
+	/* Typography */
+	--gl-font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+	--gl-font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+	--gl-font-data: "Geist", ui-monospace, SFMono-Regular, monospace;
+	--gl-font-label: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+	/* Radii */
+	--gl-r-sm: 0.25rem;
+	--gl-r-md: 0.5rem;
+	--gl-r-lg: 0.75rem;
+	--gl-r-xl: 1rem;
+	--gl-r-2xl: 1.5rem;
+	--gl-r-full: 9999px;
+
+	/* Spacing scale */
+	--gl-s-base: 4px;
+	--gl-s-xs: 8px;
+	--gl-s-sm: 12px;
+	--gl-s-gutter: 16px;
+	--gl-s-md: 20px;
+	--gl-s-lg: 32px;
+	--gl-s-xl: 48px;
+
+	color-scheme: light;
+}
+
+.gl-scope[data-gl-theme="dark"] {
+	/* Dark theme — Obsidian Gold Label */
+	--gl-surface: #131313;
+	--gl-surface-dim: #131313;
+	--gl-surface-bright: #393939;
+	--gl-surface-container-lowest: #0e0e0e;
+	--gl-surface-container-low: #1b1b1b;
+	--gl-surface-container: #1f1f1f;
+	--gl-surface-container-high: #2a2a2a;
+	--gl-surface-container-highest: #353535;
+	--gl-on-surface: #e2e2e2;
+	--gl-on-surface-variant: #d0c5af;
+	--gl-inverse-surface: #e2e2e2;
+	--gl-inverse-on-surface: #303030;
+	--gl-outline: #99907c;
+	--gl-outline-variant: #4d4635;
+	--gl-surface-tint: #e9c349;
+	--gl-primary: #f2ca50;
+	--gl-on-primary: #3c2f00;
+	--gl-primary-container: #d4af37;
+	--gl-on-primary-container: #554300;
+	--gl-inverse-primary: #735c00;
+	--gl-secondary: #c8c6c5;
+	--gl-on-secondary: #313030;
+	--gl-secondary-container: #474746;
+	--gl-on-secondary-container: #b7b5b4;
+	--gl-tertiary: #bfd0ea;
+	--gl-on-tertiary: #213145;
+	--gl-tertiary-container: #a4b4cd;
+	--gl-on-tertiary-container: #36465b;
+	--gl-error: #ffb4ab;
+	--gl-on-error: #690005;
+	--gl-error-container: #93000a;
+	--gl-on-error-container: #ffdad6;
+	--gl-primary-fixed: #ffe088;
+	--gl-primary-fixed-dim: #e9c349;
+	--gl-on-primary-fixed: #241a00;
+	--gl-on-primary-fixed-variant: #574500;
+	--gl-secondary-fixed: #e5e2e1;
+	--gl-secondary-fixed-dim: #c8c6c5;
+	--gl-on-secondary-fixed: #1c1b1b;
+	--gl-on-secondary-fixed-variant: #474746;
+	--gl-tertiary-fixed: #d3e4fe;
+	--gl-tertiary-fixed-dim: #b7c8e1;
+	--gl-on-tertiary-fixed: #0b1c30;
+	--gl-on-tertiary-fixed-variant: #38485d;
+	--gl-background: #131313;
+	--gl-on-background: #e2e2e2;
+	--gl-surface-variant: #353535;
+
+	--gl-success: #4ade80;
+	--gl-success-soft: rgba(74, 222, 128, 0.14);
+	--gl-danger: #f87171;
+	--gl-danger-soft: rgba(248, 113, 113, 0.14);
+
+	--gl-hairline: rgba(255, 255, 255, 0.06);
+	--gl-hairline-strong: rgba(255, 255, 255, 0.12);
+	--gl-inset-glint: rgba(255, 255, 255, 0.05);
+	--gl-ambient-shadow:
+		0 24px 48px -16px rgba(0, 0, 0, 0.7), 0 8px 18px -10px rgba(0, 0, 0, 0.5);
+	--gl-soft-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.55);
+	--gl-gold-glow: 0 0 14px rgba(242, 202, 80, 0.5);
+
+	color-scheme: dark;
+}
+
+/* Auto mode: follow system preference */
+@media (prefers-color-scheme: dark) {
+	.gl-scope[data-gl-theme="auto"] {
+		/* Dark theme — Obsidian Gold Label */
+		--gl-surface: #131313;
+		--gl-surface-dim: #131313;
+		--gl-surface-bright: #393939;
+		--gl-surface-container-lowest: #0e0e0e;
+		--gl-surface-container-low: #1b1b1b;
+		--gl-surface-container: #1f1f1f;
+		--gl-surface-container-high: #2a2a2a;
+		--gl-surface-container-highest: #353535;
+		--gl-on-surface: #e2e2e2;
+		--gl-on-surface-variant: #d0c5af;
+		--gl-inverse-surface: #e2e2e2;
+		--gl-inverse-on-surface: #303030;
+		--gl-outline: #99907c;
+		--gl-outline-variant: #4d4635;
+		--gl-surface-tint: #e9c349;
+		--gl-primary: #f2ca50;
+		--gl-on-primary: #3c2f00;
+		--gl-primary-container: #d4af37;
+		--gl-on-primary-container: #554300;
+		--gl-inverse-primary: #735c00;
+		--gl-secondary: #c8c6c5;
+		--gl-on-secondary: #313030;
+		--gl-secondary-container: #474746;
+		--gl-on-secondary-container: #b7b5b4;
+		--gl-tertiary: #bfd0ea;
+		--gl-on-tertiary: #213145;
+		--gl-tertiary-container: #a4b4cd;
+		--gl-on-tertiary-container: #36465b;
+		--gl-error: #ffb4ab;
+		--gl-on-error: #690005;
+		--gl-error-container: #93000a;
+		--gl-on-error-container: #ffdad6;
+		--gl-primary-fixed: #ffe088;
+		--gl-primary-fixed-dim: #e9c349;
+		--gl-on-primary-fixed: #241a00;
+		--gl-on-primary-fixed-variant: #574500;
+		--gl-secondary-fixed: #e5e2e1;
+		--gl-secondary-fixed-dim: #c8c6c5;
+		--gl-on-secondary-fixed: #1c1b1b;
+		--gl-on-secondary-fixed-variant: #474746;
+		--gl-tertiary-fixed: #d3e4fe;
+		--gl-tertiary-fixed-dim: #b7c8e1;
+		--gl-on-tertiary-fixed: #0b1c30;
+		--gl-on-tertiary-fixed-variant: #38485d;
+		--gl-background: #131313;
+		--gl-on-background: #e2e2e2;
+		--gl-surface-variant: #353535;
+
+		--gl-success: #4ade80;
+		--gl-success-soft: rgba(74, 222, 128, 0.14);
+		--gl-danger: #f87171;
+		--gl-danger-soft: rgba(248, 113, 113, 0.14);
+
+		--gl-hairline: rgba(255, 255, 255, 0.06);
+		--gl-hairline-strong: rgba(255, 255, 255, 0.12);
+		--gl-inset-glint: rgba(255, 255, 255, 0.05);
+		--gl-ambient-shadow:
+			0 24px 48px -16px rgba(0, 0, 0, 0.7), 0 8px 18px -10px rgba(0, 0, 0, 0.5);
+		--gl-soft-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.55);
+		--gl-gold-glow: 0 0 14px rgba(242, 202, 80, 0.5);
+
+		color-scheme: dark;
+	}
+}
+
+/* When the Gold Label demo is active, kill the global body background
+   from styles.css so the demo owns the whole viewport. */
+body:has(.gl-scope) {
+	background: none;
+	background-image: none;
+	background-color: transparent;
+}
+body:has(.gl-scope)::before,
+body:has(.gl-scope)::after {
+	display: none;
+}
+
+/* ============================================================
+   Base resets within the Gold Label scope
+   ============================================================ */
+
+.gl-scope {
+	font-family: var(--gl-font-body);
+	color: var(--gl-on-background);
+	background-color: var(--gl-background);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+	-webkit-tap-highlight-color: transparent;
+}
+
+.gl-scope *,
+.gl-scope *::before,
+.gl-scope *::after {
+	box-sizing: border-box;
+}
+
+.gl-scope button,
+.gl-scope a {
+	touch-action: manipulation;
+}
+
+/* Micro-border top: chamfered-glass inner highlight */
+.gl-micro-border-top {
+	box-shadow: inset 0 1px 0 0 var(--gl-inset-glint);
+}
+
+/* Hide scrollbars on horizontal chip rows */
+.gl-no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.gl-no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+/* ============================================================
+   Typography utilities
+   ============================================================ */
+
+.gl-font-display {
+	font-family: var(--gl-font-display);
+}
+.gl-font-body {
+	font-family: var(--gl-font-body);
+}
+.gl-font-data {
+	font-family: var(--gl-font-data);
+	font-variant-numeric: tabular-nums;
+}
+.gl-font-label {
+	font-family: var(--gl-font-label);
+}
+
+.gl-display-lg {
+	font-family: var(--gl-font-display);
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 48px;
+	letter-spacing: -0.02em;
+}
+.gl-headline-lg {
+	font-family: var(--gl-font-display);
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 40px;
+	letter-spacing: -0.01em;
+}
+.gl-headline-lg-mobile {
+	font-family: var(--gl-font-display);
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 32px;
+	letter-spacing: -0.01em;
+}
+.gl-body-md {
+	font-family: var(--gl-font-body);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+.gl-data-tabular {
+	font-family: var(--gl-font-data);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	font-variant-numeric: tabular-nums;
+}
+.gl-label-sm {
+	font-family: var(--gl-font-label);
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 16px;
+	letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   Components
+   ============================================================ */
+
+/* App shell — mobile-first phone frame */
+.gl-app {
+	width: 100%;
+	max-width: 450px;
+	height: 100vh;
+	margin-inline: auto;
+	background-color: var(--gl-background);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-inline: 1px solid var(--gl-hairline);
+	box-shadow: var(--gl-ambient-shadow);
+}
+
+/* Sticky header */
+.gl-header {
+	background-color: color-mix(in oklab, var(--gl-background) 88%, transparent);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+	color: var(--gl-primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding-inline: var(--gl-s-gutter);
+	height: 64px;
+	position: sticky;
+	top: 0;
+	z-index: 40;
+	border-bottom: 1px solid var(--gl-hairline);
+}
+
+.gl-icon-btn {
+	color: var(--gl-on-surface);
+	background: var(--gl-surface-container-high);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	border-radius: var(--gl-r-full);
+	border: 1px solid transparent;
+	transition:
+		background-color 180ms ease,
+		color 180ms ease,
+		border-color 180ms ease;
+}
+
+/* Main scroll area */
+.gl-main {
+	flex: 1;
+	overflow-y: auto;
+	padding-inline: var(--gl-s-gutter);
+	padding-top: 16px;
+	padding-bottom: 48px;
+	display: flex;
+	flex-direction: column;
+	gap: var(--gl-s-lg);
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+.gl-main::-webkit-scrollbar {
+	display: none;
+}
+
+/* Account selector chip */
+.gl-account-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: var(--gl-surface-container-high);
+	border: 1px solid var(--gl-outline-variant);
+	color: var(--gl-on-background);
+	border-radius: var(--gl-r-full);
+	padding: 8px 16px;
+	width: max-content;
+	cursor: pointer;
+	transition:
+		background-color 180ms ease,
+		border-color 180ms ease;
+	box-shadow: var(--gl-soft-shadow);
+}
+
+/* Balance section */
+.gl-balance-label {
+	color: var(--gl-on-surface-variant);
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.gl-balance-value {
+	font-family: var(--gl-font-display);
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 48px;
+	letter-spacing: -0.02em;
+	color: var(--gl-on-background);
+}
+.gl-balance-delta {
+	font-family: var(--gl-font-data);
+	font-variant-numeric: tabular-nums;
+	color: var(--gl-primary);
+	font-weight: 500;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Quick action circle buttons */
+.gl-action {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	color: var(--gl-on-background);
+	transition: color 180ms ease;
+}
+.gl-action-circle {
+	width: clamp(48px, 13vw, 64px);
+	height: clamp(48px, 13vw, 64px);
+	border-radius: var(--gl-r-full);
+	background: var(--gl-surface-container-high);
+	border: 1px solid color-mix(in oklab, var(--gl-primary) 50%, transparent);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--gl-primary);
+	box-shadow: var(--gl-micro-border-top), var(--gl-soft-shadow);
+	transform: translateY(-1px);
+	transition:
+		border-color 180ms ease,
+		color 180ms ease,
+		transform 180ms ease;
+}
+.gl-action-label {
+	font-family: var(--gl-font-label);
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+
+/* Promo carousel */
+.gl-carousel {
+	display: flex;
+	gap: 12px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	padding-inline: 4px;
+	scrollbar-width: none;
+}
+.gl-carousel::-webkit-scrollbar {
+	display: none;
+}
+.gl-carousel-card {
+	flex: 0 0 calc(100% - 24px);
+	scroll-snap-align: start;
+	min-width: 0;
+	transition: none;
+}
+
+/* Staking promo card */
+.gl-promo {
+	position: relative;
+	overflow: hidden;
+	background: var(--gl-surface-container-high);
+	border: 0;
+	transform: translateY(-1px);
+	border-radius: var(--gl-r-xl);
+	padding: 16px;
+	aspect-ratio: 21 / 9;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	cursor: pointer;
+	box-shadow: var(--gl-micro-border-top), var(--gl-soft-shadow);
+	transition:
+		border-color 180ms ease,
+		transform 180ms ease;
+}
+.gl-promo-glow {
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	width: 160px;
+	height: 160px;
+	background: color-mix(
+		in oklab,
+		var(--gl-tertiary-container) 14%,
+		transparent
+	);
+	border-radius: 50%;
+	filter: blur(40px);
+	pointer-events: none;
+}
+
+/* Filter chips */
+.gl-chip {
+	padding: 8px 24px;
+	border-radius: var(--gl-r-full);
+	border: 1px solid transparent;
+	background: var(--gl-surface-container-high);
+	color: var(--gl-on-surface);
+	font-family: var(--gl-font-label);
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+	cursor: pointer;
+	transition:
+		background-color 180ms ease,
+		color 180ms ease,
+		border-color 180ms ease;
+}
+.gl-chip[data-active="true"] {
+	background: var(--gl-surface-container-highest);
+	border-color: var(--gl-primary);
+	color: var(--gl-primary);
+}
+
+/* Token list card */
+.gl-list {
+	background: var(--gl-surface-container-high);
+	border: 1px solid var(--gl-hairline);
+	border-radius: var(--gl-r-xl);
+	overflow: hidden;
+	box-shadow: var(--gl-micro-border-top), var(--gl-soft-shadow);
+}
+.gl-list-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+	border-bottom: 1px solid var(--gl-hairline);
+	cursor: pointer;
+	background: color-mix(
+		in oklab,
+		var(--gl-surface-container-highest) 50%,
+		transparent
+	);
+	transition: background-color 180ms ease;
+}
+.gl-list-row:last-child {
+	border-bottom: 0;
+}
+.gl-token-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: var(--gl-r-full);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	font-weight: 700;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Bottom navigation */
+.gl-nav {
+	width: 100%;
+	flex-shrink: 0;
+	border-top: 1px solid var(--gl-hairline-strong);
+	border-top-left-radius: var(--gl-r-xl);
+	border-top-right-radius: var(--gl-r-xl);
+	background: var(--gl-surface-container-low);
+	box-shadow: 0 -12px 30px -10px var(--gl-ambient-shadow);
+	display: flex;
+	align-items: center;
+	padding: 8px clamp(4px, 1.5vw, 12px) 20px;
+}
+.gl-nav-item {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3px;
+	padding: 4px 0;
+	border-radius: var(--gl-r-lg);
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	color: var(--gl-on-surface);
+	transition: none;
+}
+.gl-nav-item,
+.gl-nav-item * {
+	transition: none;
+}
+.gl-nav-item[data-active="true"] {
+	color: var(--gl-primary);
+	background: color-mix(
+		in oklab,
+		var(--gl-surface-container-low) 60%,
+		transparent
+	);
+	border-top: 2px solid var(--gl-primary);
+}
+.gl-nav-label {
+	font-family: var(--gl-font-label);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+/* Theme toggle (Gold Label scoped) */
+.gl-theme-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	border-radius: var(--gl-r-full);
+	background: var(--gl-surface-container-low);
+	border: 1px solid var(--gl-hairline-strong);
+	color: var(--gl-on-surface);
+	font-family: var(--gl-font-label);
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	box-shadow: var(--gl-micro-border-top), var(--gl-soft-shadow);
+	transition:
+		background-color 180ms ease,
+		border-color 180ms ease,
+		transform 180ms ease;
+}
+
+/* Demo scaffolding outside the phone */
+.gl-demo-wrap {
+	min-height: 100vh;
+	background:
+		radial-gradient(
+			800px 400px at 0% 0%,
+			color-mix(in oklab, var(--gl-primary) 8%, transparent),
+			transparent 60%
+		),
+		radial-gradient(
+			700px 380px at 100% 20%,
+			color-mix(in oklab, var(--gl-tertiary-container) 10%, transparent),
+			transparent 60%
+		),
+		var(--gl-background);
+	padding-block: 32px 120px;
+	padding-inline: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+}
+
+.gl-demo-bar {
+	width: 100%;
+	max-width: 450px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+.gl-demo-title {
+	font-family: var(--gl-font-display);
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--gl-on-surface-variant);
+}
+.gl-demo-sub {
+	font-family: var(--gl-font-body);
+	font-size: 12px;
+	color: var(--gl-on-surface-variant);
+	opacity: 0.7;
+	max-width: 450px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+/* Entrance animation */
+.gl-rise {
+	animation: gl-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes gl-rise {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Smooth theme transitions */
+.gl-scope,
+.gl-scope * {
+	transition:
+		background-color 220ms ease,
+		border-color 220ms ease,
+		color 220ms ease,
+		box-shadow 220ms ease;
+}
